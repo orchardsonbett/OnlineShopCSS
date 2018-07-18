@@ -44,26 +44,26 @@ include("functions/functions.php");
                     <li><a href="#">Cameras</a></li>-->
                 </ul>
                 <div id="sidebar_title">Brands </div>
-            <ul id="cats">
-                <?php getBrand();?>
-               <!-- <li><a href="#">HP</a></li>
+                <ul id="cats">
+                    <?php getBrand();?>
+                    <!-- <li><a href="#">HP</a></li>
                 <li><a href="#">Dell</a></li>
                 <li><a href="#">Moto</a></li>
                 <li><a href="#">LG</a></li>-->
-            </ul>
+                </ul>
             </div>
-            
-        </div>
-        <div id="content_area">
-        <div id="products_box">
-            <?php getPro(); ?>
+            <div id="content_area">
+                <div id="products_box">
+                    <?php getPro(); ?>
+                </div>
             </div>
-        
+
+
         </div>
-    </div>
-    <div id="footer">
-    <h2 style="text-align:center; padding-top:30px;">&copy; 2018 by www.ranjan.com</h2>
-    </div>
+
+        <div id="footer">
+            <h2 style="text-align:center; padding-top:30px;">&copy; 2018 by www.ranjan.com</h2>
+        </div>
     </div>
 
 </body>
