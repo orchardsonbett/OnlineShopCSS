@@ -32,6 +32,7 @@ body{background: red;}
     width: 1000px;
     height: auto;
     margin: auto;
+    background: black;
     
 }
 .header_wrapper{
@@ -109,6 +110,7 @@ body{background: red;}
 }
 #single_product{float:left;margin-left: 20px; padding:10px;}
 #single_product img {border: 2px solid black;}
+#shopping_cart{ width: 800px;height: 50px; background: black; color: white;}
 
 #footer{
   width: 1000px;
