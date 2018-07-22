@@ -57,22 +57,18 @@ include("functions/functions.php");
                 <div id="shopping_cart">
                     <span style="float:right; font-size:15px; padding:5px; line-height:40px;">
                     Welcome guest!<b style="color:yellow">Shopping Cart</b> Total Items: <?php total_items();?> Total Price: <?php total_price();?> <a href="cart.php">Go to Cart</a>
-                        
-                        <?php 
-                        if(!isset($_SESSION['customer_email'])){
-                            echo"<a href='checkout.php'>Login</a>";
-                        }
-                            else{
-                                echo"<a href='logout.php' style='color:orange';>Logout</a>";
-                            }
-                        ?>
                      </span>
                 </div>
                  <?php getIp();?>
                 <div id="products_box">
-                    <?php getPro(); ?>
-                    <?php getCatPro(); ?>
-                    <?php getBrandpro();?>
+                    <?php 
+                    if(!isset($_SESSION['customer_email'])){
+                     include("customer_login.php");   
+                    }
+                    else{
+                        include("payment.php");
+                    }
+                    ?>
                 </div>
             </div>
         </div>
