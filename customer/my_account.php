@@ -35,7 +35,7 @@ include("functions/functions.php");
 
         <div class="content_wrapper">
             <div id="sidebar">
-                <div id="sidebar_title">My Account: </div>
+                <div id="sidebar_title">My Account:</div>
                 <ul id="cats">
                     <?php
                     $user=$_SESSION['customer_email'];
@@ -51,6 +51,7 @@ include("functions/functions.php");
                    <li><a href="my_account.php?edit_account">Edit Account</a></li>
                     <li><a href="my_account.php?change_pass">Change Password</a></li>
                     <li><a href="my_account.php?delete_account">Delete Account</a></li>
+                    <li><a href="logout.php?logout">Logout</a></li>
                  </ul>
                
                
@@ -98,7 +99,9 @@ include("functions/functions.php");
                     if(isset($_GET['edit_account'])){
                         include('edit_account.php');
                     }
-                    
+                    if(isset($_GET['change_pass'])){
+                        include('change_pass.php');
+                    }
                     ?>
                 </div>
             </div>

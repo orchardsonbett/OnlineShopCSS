@@ -64,7 +64,7 @@ include("functions/functions.php");
                             echo "<b>welcome Quest:</b>";
                         }
                         ?>
-                    Welcome guest!<b style="color:yellow">Shopping Cart</b> Total Items: <?php total_items();?> Total Price: <?php total_price();?> <a href="cart.php">Go to Cart</a>
+                    <b style="color:yellow">Shopping Cart</b> Total Items: <?php total_items();?> Total Price: <?php total_price();?> <a href="cart.php">Go to Cart</a>
                         
                         <?php 
                         if(!isset($_SESSION['customer_email'])){
