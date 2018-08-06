@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <?php 
 include('includes/db.php');
+if(!isset($_SESSION['admin_email'])){
+    echo "<script>window.open('admin_login.php?not_admin=You are not an admin!','_self')</script>";
+}
+else{
 ?>
 <html>
 <head>
@@ -163,3 +167,4 @@ move_uploaded_file($product_image_tmp, "product_images/$product_image");
         }
     }
 ?>
+<?php } ?>

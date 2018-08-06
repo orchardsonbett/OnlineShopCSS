@@ -1,4 +1,10 @@
 <?php
+if(!isset($_SESSION['admin_email'])){
+	echo "<script>window.open('admin_login.php?not_admin=You are not an admin!','_self')</script>";
+}
+else{
+	?>
+<?php
 include("includes/db.php");
 
 if(isset($_GET['delete_cat'])){
@@ -16,3 +22,4 @@ if(isset($_GET['delete_cat'])){
 
 }
 ?>
+<?php }?>

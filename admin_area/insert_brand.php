@@ -1,4 +1,9 @@
-
+<?php
+if(!isset($_SESSION['admin_email'])){
+	echo "<script>window.open('admin_login.php?not_admin=You are not an admin!','_self')</script>";
+}
+else{
+	?>
 <form action="" method="post" style="padding: 80px;">
 	<b>Insert New Brand</b>
 	<input type="text" name="new_brand"/>
@@ -17,3 +22,4 @@
 		}
 	}
 ?>
+<?php } ?>

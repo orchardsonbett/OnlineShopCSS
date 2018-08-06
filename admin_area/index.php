@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_SESSION['admin_email'])){
+	echo "<script>window.open('admin_login.php?not_admin=You are not an admin!','_self')</script>";
+}
+else{
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +31,7 @@
 
 </div>
 	<div id="left">
+		<h2 style="color: black; text-align: center;"><?php echo @$_GET['logged_in']; ?></h2>
 		<?php
 		if(isset($_GET['insert_product'])){
          include('insert_product.php');
@@ -57,11 +66,16 @@
 		}
 		if (isset($_GET['edit_brand'])) {
 			include('edit_brand.php');
-			# code...
-		}
+			}
+			if (isset($_GET['delete_brand'])) {
+				include('delete_brand.php');
+			}
+			if(isset($_GET['view_customers'])){
+				include('view_customers.php');
+			}
 ?>
 	</div>
 </div>
-
 </body>
 </html>
+<?php }?>
