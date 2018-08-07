@@ -33,6 +33,7 @@ else{
 	<div id="left">
 		<h2 style="color: black; text-align: center;"><?php echo @$_GET['logged_in']; ?></h2>
 		<?php
+		
 		if(isset($_GET['insert_product'])){
          include('insert_product.php');
 
@@ -78,4 +79,4 @@ else{
 </div>
 </body>
 </html>
-<?php }?>
+<?php } ?>

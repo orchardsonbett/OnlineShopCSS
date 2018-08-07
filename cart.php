@@ -1,93 +1,130 @@
 <!DOCTYPE>
-<?php
+<?php 
 session_start(); 
+
 include("functions/functions.php");
-include("admin_area/includes/db.php");
+
+include("includes/db.php");
 ?>
 <html>
-
-<head>
-    <title>The Online Shop</title>
-    <link rel="stylesheet" href="styles/style.css" media="all" />
-
-</head>
-
+	<head>
+		<title>My Online Shop</title>
+		
+		
+	<link rel="stylesheet" href="styles/style.css" media="all" /> 
+	</head>
+	
 <body>
-    <div class="main_wrapper">
-        <div class="header_wrapper">
-            <!-- <img id="logo" src="images/logo1.png" />
-            <img id="banner" src="images/banner.jpg" />-->
-        </div>
-        <div class="menubar">
-            <ul id="menu">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="all_products.php">All Products</a></li>
-                <li><a href="#">My Account</a></li>
-                <li><a href="#">Sign Up</a></li>
-                <li><a href="#">Cart</a></li>
-            </ul>
-            <div id="form">
-                <form method="get" action="results.php" enctype="multipart/form-data">
-                    <input type="text" name="user_query" placeholder="search any thing" />
-                    <input type="submit" name="search" value="search" />
-                </form>
-            </div>
-        </div>
-
-        <div class="content_wrapper">
-            <div id="sidebar">
-                <div id="sidebar_title">Categories </div>
-                <ul id="cats">
-                    <?php getCats();?>
-                    <!--<li><a href="#">Laptops</a></li>
-                    <li><a href="#">Computers</a></li>
-                    <li><a href="#">Mobiles</a></li>
-                    <li><a href="#">Cameras</a></li>-->
-                </ul>
-                <div id="sidebar_title">Brands </div>
-                <ul id="cats">
-                    <?php getBrand();?>
-                    <!-- <li><a href="#">HP</a></li>
-                <li><a href="#">Dell</a></li>
-                <li><a href="#">Moto</a></li>
-                <li><a href="#">LG</a></li>-->
-                </ul>
-            </div>
-            <div id="content_area">
-                <?php cart();?>
-                <div id="shopping_cart">
-                    <span style="float:right; font-size:15px; padding:5px; line-height:40px;">
-                      <?php
-                        if(isset($_SESSION['customer_email'])){
-                            echo "<b>Welcome:</b>" . $_SESSION['customer_email']. "<b style='color:yellow;'>Your</b>";
-                        }
-                        else{
-                            echo "<b>welcome Quest:</b>";
-                        }
-                        ?>
-                        <b style="color:yellow">Shopping Cart</b> Total Items: <?php total_items();?> Total Price: <?php total_price();?> <a href="index.php">Back to Shop</a>
-                         <?php 
-                        if(!isset($_SESSION['customer_email'])){
-                            echo"<a href='checkout.php'>Login</a>";
-                        }
-                            else{
-                                echo"<a href='logout.php' style='color:orange';>Logout</a>";
-                            }
-                        ?>
-                     </span>
-                </div>
-
-                <div id="products_box">
-                    <form action="" method="post" enctype="multipart/form-data">
-                        <table align='center' width="700" bgcolor="red">
-                            
-                            <tr aligin="center">
-                                <td>remove</td>
-                                <td>Product (S)</td>
-                                <td>Quantity</td>
-                                <td>Total price</td>
-                            </tr>
-<?php 
+	
+	<!--Main Container starts here-->
+	<div class="main_wrapper">
+	
+		<!--Header starts here-->
+		<div class="header_wrapper">
+		
+			<!-- <a href="index.php"><img id="logo" src="images/logo.gif" /> </a>
+			<img id="banner" src="images/ad_banner.gif" /> -->
+		</div>
+		<!--Header ends here-->
+		
+		<!--Navigation Bar starts-->
+		<div class="menubar">
+			
+			<ul id="menu">
+				<li><a href="index.php">Home</a></li>
+				<li><a href="all_products.php">All Products</a></li>
+				<li><a href="customer/my_account.php">My Account</a></li>
+				<li><a href="#">Sign Up</a></li>
+				<li><a href="cart.php">Shopping Cart</a></li>
+				<li><a href="#">Contact Us</a></li>
+			
+			</ul>
+			
+			<div id="form">
+				<form method="get" action="results.php" enctype="multipart/form-data">
+					<input type="text" name="user_query" placeholder="Search a Product"/ > 
+					<input type="submit" name="search" value="Search" />
+				</form>
+			
+			</div>
+			
+		</div>
+		<!--Navigation Bar ends-->
+	
+		<!--Content wrapper starts-->
+		<div class="content_wrapper">
+		
+			<div id="sidebar">
+			
+				<div id="sidebar_title">Categories</div>
+				
+				<ul id="cats">
+				
+				<?php getCats(); ?>
+				
+				<ul>
+					
+				<div id="sidebar_title">Brands</div>
+				
+				<ul id="cats">
+					
+					<?php getBrand(); ?>
+				
+				<ul>
+			
+			
+			</div>
+		
+			<div id="content_area">
+			
+			<?php cart(); ?>
+			
+			<div id="shopping_cart"> 
+					
+					<span style="float:right; font-size:17px; padding:5px; line-height:40px;">
+					
+					<?php 
+					if(isset($_SESSION['customer_email'])){
+					echo "<b>Welcome:</b>" . $_SESSION['customer_email'] . "<b style='color:yellow;'>Your</b>" ;
+					}
+					else {
+					echo "<b>Welcome Guest:</b>";
+					}
+					?>
+					
+					<b style="color:yellow">Shopping Cart -</b> Total Items: <?php total_items();?> Total Price: <?php total_price(); ?> <a href="index.php" style="color:yellow">Back to Shop</a>
+					
+					<?php 
+					if(!isset($_SESSION['customer_email'])){
+					
+					echo "<a href='checkout.php' style='color:orange;'>Login</a>";
+					
+					}
+					else {
+					echo "<a href='logout.php' style='color:orange;'>Logout</a>";
+					}
+					
+					
+					
+					?>
+					
+					</span>
+			</div>
+			
+				<div id="products_box">
+				
+			<form action="" method="post" enctype="multipart/form-data">
+			
+				<table align="center" width="700" bgcolor="skyblue">
+					
+					<tr align="center">
+						<th>Remove</th>
+						<th>Product(S)</th>
+						<th>Quantity</th>
+						<th>Total Price</th>
+					</tr>
+					
+		<?php 
 		$total = 0;
 		
 		global $con; 
@@ -127,7 +164,7 @@ include("admin_area/includes/db.php");
 						<td><?php echo $product_title; ?><br>
 						<img src="admin_area/product_images/<?php echo $product_image;?>" width="60" height="60"/>
 						</td>
-						<td><input type="text" size="6" name="qty" value="<?php echo $_SESSION['qty'];?>"/></td>
+						<td><input type="text" size="4" name="qty" value="<?php echo $_SESSION['qty'];?>"/></td>
 						<?php 
 						if(isset($_POST['update_cart'])){
 						
@@ -202,13 +239,30 @@ include("admin_area/includes/db.php");
 	echo @$up_cart = updatecart();
 	
 	?>
-                </div>
-            </div>
-        </div>
-        <div id="footer">
-            <h2 style="text-align:center; padding-top:30px;">&copy; 2018 by www.ranjan.com</h2>
-        </div>
-    </div>
-</body>
 
+				
+				</div>
+			
+			</div>
+		</div>
+		<!--Content wrapper ends-->
+		
+		
+		
+		<div id="footer">
+		
+		<h2 style="text-align:center; padding-top:30px;">&copy; 2014 by www.ranjan.com</h2>
+		
+		</div>
+	
+	
+	
+	
+	
+	
+	</div> 
+<!--Main Container ends here-->
+
+
+</body>
 </html>

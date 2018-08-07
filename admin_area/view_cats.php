@@ -40,4 +40,4 @@ $cat_title=$row_cat['cat_title'];
 
 
 </table>
-<?php ?>
+<?php } ?>
